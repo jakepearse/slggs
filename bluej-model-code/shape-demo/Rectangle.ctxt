@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=height\ length
+comment0.target=Rectangle(int,\ int)
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Rectangle\n
+comment1.params=
+comment1.target=double\ getPerimeter()
+comment1.text=\n\ The\ perimeter\ of\ a\ rectangle\ is\ twice\ it's\ height\ plus\ twice\ its\ length\n\ @return\ The\ rectangle's's\ perimeter\n
+comment2.params=
+comment2.target=double\ getArea()
+numComments=3

@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=WriteToFile()
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ WriteToFile\n
+comment1.params=filePath\ text
+comment1.target=void\ writeToFile(java.lang.String,\ java.lang.String)
+comment1.text=\n\ Write\ your\ text\ to\ a\ file\n\ \n\ @param\ \ \ filePath\ -\ the\ name\ to\ save\ your\ file\ under\n\ @param\ \ \ text\ -\ the\ text\ to\ save\ in\ your\ file\ \n
+numComments=2

@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=newReadFromFile()
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ newReadFromFile\n
+comment1.params=filePath
+comment1.target=void\ printFileContents(java.lang.String)
+comment1.text=\n\ The\ easiest\ way\ to\ read\ from\ a\ file\ in\ Java\n
+numComments=2
