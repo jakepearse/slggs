@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+
+        <head>
+                <meta charset="utf-8">
+
+                <title>Arrays</title>
+
+                <meta name="description" content="Arrays">
+                <meta name="author" content="J Pearse">
+
+                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+                <link rel="stylesheet" href="css/reveal.css">
+                <link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+                <!-- Code syntax highlighting -->
+                <link rel="stylesheet" href="lib/css/zenburn.css">
+
+                <!-- Printing and PDF exports -->
+                <script>
+                        var link = document.createElement( 'link' );
+                        link.rel = 'stylesheet';
+                        link.type = 'text/css';
+                        link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+                        document.getElementsByTagName( 'head' )[0].appendChild( link );
+                </script>
+
+                <!--[if lt IE 9]>
+                <script src="lib/js/html5shiv.js"></script>
+                <![endif]-->
+        </head>
+
+        <body>
+
+                <div class="reveal">
+
+                        <!-- Any section element inside of this container is displayed as a slide -->
+                        <div class="slides">
+                                        <section data-markdown>
+                                                <script type="text/template">
+                                                        ## Arrays
+                                                        L.O: Create, read and write to an array with Java 
+                                                        - Key terms
+                                                         - Array <!-- .element: class="fragment" -->
+                                                         - Element <!-- .element: class="fragment" -->
+                                                         - Index <!-- .element: class="fragment" -->
+                                                </script>
+                                        </section>
+                                        
+                                          <section>
+                                            <h3>Where are variables stored?</h3>
+                                            <p>
+                                                When we declare a variable, we are <em>reserving</em> a space in RAM
+                                            </p>
+                                            <pre><code>int x;
+</code></pre>
+                                            <p>A Java int is a 32bit number, so we have reserved 32bit in RAM</p>
+                                            <pre><code>x = 4294967295;
+</code></pre>
+                                            <p>
+                                                Our value is stored in the space we reserved, we have no real idea where exactly in RAM that is.
+                                                </p>
+
+                                        </section>
+
+                                        <section><!-- using objects -->
+                                          <h3>Multiple Values</h3>
+                                          <p>
+                                              If we want to store a lot of <em>related</em> data in RAM, we could just start declaring loads of variables
+                                          </p>
+                                          <pre><code>int dataA;
+int dataB;
+int dataC;
+...</code></pre>
+                                            <p>
+                                              This approach very quickly becomes unhelpful.
+                                            </p>
+                                            <p>
+                                                There is no easy way to establish that these values are related to each other, except that they have similar identifiers.
+                                            </p>
+                                        </section>
+                                                <section>
+                                                <h3>Structured Data</h3>
+                                                <p>
+                                                When we need to represent the relationship between values we need a <em>Data Structure,</em>
+                                                The simplest (maybe most important) data structure is the <strong>array</strong>.
+                                                </p>
+                                                <p>In Java we declare an array using square brackets.</p>
+                                                <pre><code>int[] myIntArray;
+</pre></code>
+                                                <p>This only reserves the point that our array will <em>start at</em> in RAM.</p>
+                                                <p>We also need to tell the compiler how many <em>elements</em> our array is going to contain.</p>
+                                                <pre><code>myIntArray = new int[3];
+</pre></code>
+                                                </section>
+                                                
+                                                <section data-markdown>
+                                                    <script type="text/template">
+                                                ### Arrays
+                                                - The number of *elements* is **fixed**, it cannot be changed.
+                                                - We have reserved 3, consecutive 32bit spaces in memory. 
+                                                - The order of our values will also be preserved.
+                                                - Once we have created our Array we can assign and overwrite the values as many times as we like.
+                                                    </script>
+                                                </section>
+                                                
+                                                <section>
+                                                <h3>Writing to an Array</h3>
+                                                <p>
+                                                Of course we can only assign values of the correct <em>type</em> to our array elements.
+                                                </p>
+                                                <p><strong>The first element of any array is at <em>index</em> zero</strong> [0]</p>
+                                                <pre><code>myIntArray[0] = 33;
+</pre></code>
+                                                <p>The value 33 is now stored at the 0<sup>th</sup> <em>element</em>; Index 0</p>
+                                                <p>If we try to write to (or read from) an element that is equal to the length of array, it will fail.</em></p>
+                                                <pre><code>ArrayIndexOutOfBoundsException
+</pre></code>
+                                                <p>Arrays have a property called length which is the number of elements the array can hold</p>
+                                                
+                                                </section>
+                                                
+                                                <section>
+                                                <h3>Reading from an array</h3>
+                                                <p>We can get the value from any index simply.
+                                                <pre><code>myIntArray[2];
+</pre></code>
+                                                <p>Returns the value stored at index 2</p>
+                                                <p>The following code will <strong>always fail</strong></p>
+                                                <pre><code>myIntArray[myIntArray.length];
+</pre></code>
+                                                <p>Can anyone see why?</p>
+                                                <pre class="fragment"><code>myIntArray[myIntArray.length - 1];
+</pre></code>
+                                                </section>
+
+                        </div>
+
+                </div>
+
+                <script src="lib/js/head.min.js"></script>
+                <script src="js/reveal.js"></script>
+
+                <script>
+
+                        // Full list of configuration options available at:
+                        // https://github.com/hakimel/reveal.js#configuration
+                        Reveal.initialize({
+                                controls: true,
+                                progress: true,
+                                history: true,
+                                center: true,
+
+                                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                                // Optional reveal.js plugins
+                                dependencies: [
+                                        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                                        { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                        { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                        { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+                                        { src: 'plugin/zoom-js/zoom.js', async: true },
+                                        { src: 'plugin/notes/notes.js', async: true }
+                                ]
+                        });
+
+                </script>
+
+        </body>
+</html>
