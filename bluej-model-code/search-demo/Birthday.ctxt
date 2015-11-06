@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=day\ month\ year
+comment0.target=int\ encode(int,\ int,\ int)
+comment0.text=\n\ \n\ @return\ the\ date\ encoded\ as\ an\ int\n
+comment1.params=code
+comment1.target=int[]\ decode(int)
+comment1.text=\n\ @param\ code\ a\ birthday\ encoded\ as\ an\ int\n\ @return\ a\ 3\ element\ array\ [day,month,year]\n
+numComments=2

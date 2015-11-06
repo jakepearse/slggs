@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 public class ArraySortingDemo
 {
-    // instance variables - replace the example below with your own
+    // instance variables
     private int[] myUnsortedArray;
 
     /**

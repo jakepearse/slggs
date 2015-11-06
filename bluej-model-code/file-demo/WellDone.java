@@ -2,9 +2,14 @@
 /**
  * I'm proud of you, it brings to mind these words of wisdom
  * 
- * @author J Pearse 
- * @version 1.0
+ * To find out what it says, write the byte[] tsBytes into a file
+ * 
+ * @author ? 
+ * @version ?
  */
+
+// What will you need to import
+
 public class WellDone
 {
     byte[] tsBytes;
@@ -14,7 +19,7 @@ public class WellDone
      */
     public WellDone()
     {
-        // initialise instance variables
+        // this array contains an encoded message
        tsBytes=new byte[]{89,111,117,32,104,101,108,100,32,121,111,117,114,32,104,101,97,100,32,
            108,105,107,101,32,97,32,104,101,114,111,10,79,110,32,97,32,104,105,115,116,111,114,
            121,32,98,111,111,107,32,112,97,103,101,10,73,116,32,119,97,115,32,116,104,101,32,101,
@@ -29,9 +34,9 @@ public class WellDone
     /**
     *
     */
-    public void readPraise()
+    public void writePraise(String filePath)
     {
-        String t = new String(tsBytes);
-        System.out.println(t);
+        // turn the filePath String into a Path object
+        // write the byteArray into your file
     }
 }
