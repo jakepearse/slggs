@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+        <head>
+                <meta charset="utf-8">
+
+                <title>Loops</title>
+
+                <meta name="description" content="Loops">
+                <meta name="author" content="J Pearse">
+
+                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+               
+                <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+                <link rel="stylesheet" href="../reveal.js/css/theme/blood.css" id="theme">
+
+                <!-- Code syntax highlighting -->
+                <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+                <!-- Printing and PDF exports -->
+                <script>
+                        var link = document.createElement( 'link' );
+                        link.rel = 'stylesheet';
+                        link.type = 'text/css';
+                        link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+                        document.getElementsByTagName( 'head' )[0].appendChild( link );
+                </script>
+
+                <!--[if lt IE 9]>
+                <script src="lib/js/html5shiv.js"></script>
+                <![endif]-->
+        </head>
+
+        <body>
+
+                <div class="reveal">
+
+                        <!-- Any section element inside of this container is displayed as a slide -->
+                        <div class="slides">
+                                        
+                                                <section data-markdown>
+                                                <script type="text/template">
+                                                        ## Todays topic is:
+                                                        #### Iteration
+                                                        LO: I can iterate using a loop.
+                                                        - All: Create a determinate loop, .
+                                                        - Most: Create indeterminate loops
+                                                        - Some: At least-once and sentinel controlled loops.
+                                                        
+                                                        *Key terms:*
+                                                        **for, while, do...while, determinate, indeterminate**
+                                                </script>
+                                        </section>
+                                        
+                                      <section data-markdown>
+                                                <script type="text/template">
+                                                        ## Iteration
+                                                        Repeated execution or iteration is one of the building blocks of declaraitve programming
+                                                        - Sequence
+                                                        - Assignment
+                                                        - Selection
+                                                        - **Iteration**
+                                                        
+                                        </script>
+                                        </section>
+                                        
+                                        <section data-markdown>
+                                          <script type="text/template">
+                                                        ## Recap - Selection, Boolean conditions
+                                                        - Kahoot quiz
+                                                        - [www.kahoot.it](http://www.kahoot.it)
+                                                </script>
+                                        </section>
+                                        
+                                          <section>
+                                                        <h3>Determinate loop</h3>
+                                                        <p>We know before hand, how many times the block of code should be exectued.<p>
+                                                        <pre><code>1. sugarsAdded ← zero ;
+2. Find out how many sugarsRequired ;
+3. WHILE (sugarsAdded < SugarsRequired)
+  3.1 Add spoonful of sugar;
+  3.2 sugarsAdded ← sugarsAdded + 1;
+ ENDWHILE
+                                                        </code></pre>
+                                        </section>
+                                        
+                                                                                  <section data-markdown>
+                                          <script type="text/template">
+                                                        ## Binary chop search
+                                                        If the array elements are *sorted* we can do much better.
+                                                        
+                                                        First check the median element, by comparing its value to the one we are looking for,
+                                                        we can half the size of the array we need to search - this can be done repeatedly.
+                                                        
+                                                        We only need to check a number of elements equal to the base logarithm of our array length.
+                                                        
+                                                        Logarithmic time.
+                                                </script>
+                                        </section>
+                                        
+                                        <section data-markdown>
+                                                <script type="text/template">
+                                                        ##### Starter: Possible Solution
+                                                        1. assign each value to a variable day,month,year will be d,m,y 
+                                                        
+                                                        2. multiply the year by 10,000 and the month by 100
+                                                        
+                                                        3. now sum all 3 values to get a total: t = 10,000y + 100m + day
+                                                        
+                                                        - to get back to our original values we will need to use integer division.
+                                                        
+                                                         - t / 10,000 == y
+                                                        
+                                                         - t - 10000 \* (t / 10000) == 100m + d
+                                                         
+                                                         - and so on...
+                                                </script>
+                                        </section>
+
+                        </div>
+
+                </div>
+
+                <script src="../reveal.js/lib/js/head.min.js"></script>
+                <script src="../reveal.js/js/reveal.js"></script>
+
+                <script>
+
+                        // Full list of configuration options available at:
+                        // https://github.com/hakim../reveal.js.js#configuration
+                        Reveal.initialize({
+                                controls: true,
+                                progress: true,
+                                history: true,
+                                center: true,
+
+                                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                                // Optional reveal.js plugins
+                                dependencies: [
+                                        { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                                        { src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                        { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                        { src: '../reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+                                        { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+                                        { src: '../reveal.js/plugin/notes/notes.js', async: true }
+                                ]
+                        });
+
+                </script>
+
+        </body>
+</html>
