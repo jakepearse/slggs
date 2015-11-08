@@ -15,7 +15,7 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
                 <link rel="stylesheet" href="../reveal.js/css/reveal.css">
-                <link rel="stylesheet" href="../reveal.js/css/theme/sky.css" id="theme">
+                <link rel="stylesheet" href="../reveal.js/css/theme/sky-mod.css" id="theme">
 
                 <!-- Code syntax highlighting -->
                 <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
@@ -47,11 +47,36 @@
                                                                 
                                                          1. Using JavaScript to modify websites dynamicaly.
                                                          2. JavaScript and web graphics.
-                                                         3. Intelligent search and 'dirty' ai.
+                                                         3. Heuristic search and 'dirty' AI.
                                         </script>
                                         </section>
                                         
+                                        <section data-markdown>
+                                        <script type="text/template">
+                                                        ## Document Object Model
+                                                        #### DOM
+                                                                
+                                                        Browsers provide a bunch of methods we can use to modify pages in place.
+                                        </script>
+                                        </section>
                                         
+                                        <section><!-- using objects -->
+                                          <h3>Input / Output</h3>
+                                          <p>Input: Form elements or via prompt.</p>
+                                        <pre><code>prompt("enter something");</code></pre>
+                                          <p>Output: Modify DOM</p>
+                                          <pre><code>console.log("foo");
+document.writeln("bar");
+alert("baz");</code></pre>
+                                        </section>
+                                          
+                                                                                    <section><!-- slide 2 -->
+                                          <h4>JavaScript console</h4>
+                                          <p>Modern Browsers have a built-in JavaScript testing environment</p>
+                                          <p>Press F12 in Chrome to open the developer's panel</p>
+                                          <p>Look for the console tab and the > prompt</p>
+                                        <p>The console is a very useful way to test out your JavaScript code instantly.</p>
+                                        </section>
                                           
                                         <section><!-- using objects -->
                                           <h3>Not a number</h3>
@@ -60,17 +85,6 @@
                                           <p>This is a particular oddity of JavaScript, although it's not a number it partially behaves like one!</p>
                                           <p>For the most part, if you see NaN cropping up, it means you have tried to perform a mathematical operation on a string by mistake.</p>
                                         </section>
-                                          
-                                          <section><!-- slide 2 -->
-                                          <h4>JavaScript console</h4>
-                                          <p>Modern Browsers have a built-in JavaScript testing environment</p>
-                                          <p>Press F12 in Chrome to open the developer's panel</p>
-                                          <p>Look for the console tab and the > prompt</p>
-                                        <p>The console is a very useful way to test out your JavaScript code instantly.</p>
-                                        </section>
-                                        
-                                        
-
 
                         </div>
 

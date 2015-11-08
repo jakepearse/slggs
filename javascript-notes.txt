@@ -1,0 +1,111 @@
+// is a single line comment
+
+/* */ is a multi line comment but it is unsafe because the */ pair may occur in a regex
+
+reserved names -- not all of these are actually used, but you can't use any of them;
+    break
+    case
+    class
+    catch
+    const
+    continue
+    debugger
+    default
+    delete
+    do
+    else
+    export
+    extends
+    finally
+    for
+    function
+    if
+    import
+    in
+    instanceof
+    let
+    new
+    return
+    super
+    switch
+    this
+    throw
+    try
+    typeof
+    var
+    void
+    while
+    with
+    yield
+
+strings can be created using single or double quotes, there is no char type.
+Two strings with the same charecters in the same order have the same value;
+"foo" === "f" + "o" + "o";
+strings all have a length property
+"nine".length === 4;
+strings have methods
+"foo".toUpperCase() === "FOO";
+
+all numbers are 64-bit floating point numbers 1 and 1.0 are the same value
+
+declare variables with the var keyword, var age = 99;
+All variables are thrown together in the global namespace... this is a serious problem with JavaScript, blocks of code {} also dont have local namespaces, even though they definately should.
+Thankfully functions have a local scope, you'll want to get used to taking advantage of this fact early on.
+If you foolishly declare a varibale without using the var keyword it will be thrown into the global namespace... don't do this.
+
+comparison operators:
+<
+=<
+>
+=>
+===
+!==
+
+== and != are unreliable because of 'type coersion' always use === and !==
+
+falsey values:
+There are rather many values that evalute to false;
+false
+null
+undefined
+the empty string '' or ""
+the number 0
+the number NaN
+
+all other values are truthy, including true, the string "false" and all objects.
+
+selection:
+JavaScript has all the usual suspects
+if (condition1) {
+   // do stuff
+} else if (condition2) {
+  // do other stuff
+} else {
+  // last resort
+}
+
+switch (variable) {
+ case "foo":
+      statements;
+      break;
+ case "bar":
+      statements;
+      break;
+ case "baz":
+      statements;
+      break;
+ default:
+      statements;
+}
+
+loops:
+c style do .. while and for loops
+
+while ( condition ) {
+  // keep doing things
+  }
+  
+for (var i = 0; i < someLimit; i++) {
+    //do something someLimit many times
+}
+
