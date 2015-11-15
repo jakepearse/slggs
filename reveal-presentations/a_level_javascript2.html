@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+        <head>
+                <meta charset="utf-8">
+
+                <title>Intro to JavaScript</title>
+
+                <meta name="description" content="intro to JavaScript">
+                <meta name="author" content="J Pearse">
+
+                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+                <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+                <link rel="stylesheet" href="../reveal.js/css/theme/sky-mod.css" id="theme">
+
+                <!-- Code syntax highlighting -->
+                <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+                <!-- Printing and PDF exports -->
+                <script>
+                        var link = document.createElement( 'link' );
+                        link.rel = 'stylesheet';
+                        link.type = 'text/css';
+                        link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+                        document.getElementsByTagName( 'head' )[0].appendChild( link );
+                </script>
+
+                <!--[if lt IE 9]>
+                <script src="../reveal.js/lib/js/html5shiv.js"></script>
+                <![endif]-->
+        </head>
+
+        <body>
+
+                <div class="reveal">
+
+                        <!-- Any section element inside of this container is displayed as a slide -->
+                        <div class="slides">
+                                        <section data-markdown>
+                                                <script type="text/template">
+                                                        ## JavaScript
+                                                        #### module content
+                                                                
+                                                         1. **Using JavaScript to modify websites dynamicaly.**
+                                                         2. JavaScript and web graphics.
+                                                         3. Heuristic search and 'dirty' AI.
+                                        </script>
+                                        </section>
+                                        
+                                        <section data-markdown>
+                                        <script type="text/template">
+                                                        ## Tags, Styling and Selection
+                                                        #### LO: Select and modify html elements using JS
+                                                        - Review OCR requirements for HTML & CSS
+                                                        - Creating and using link elements
+                                                        - Using JS event trigger & selection methods
+                                        </script>
+                                        </section>
+                                        
+                                        <section><!-- using objects -->
+                                          <h3>Expectations</h3>
+                                          <p>You should be able to explain the use of every html tag used in the tags.html file (moodle)</p>
+                                        <p>You should be able to explain the use of CSS selectors in linked stylesheets AND the use of in-line styling</p>
+                                        <pre><code>H1, #mainTitle .pageTitle {
+  background-color: red;
+}</code></pre>
+                                        </section>
+                                          
+                                          
+                                        <section><!-- using objects -->
+                                          <h3>Practice selecting Elements using JS</h3>
+                                          <p>Complete the allAboutMe project (moodle)</p>
+                                          <ol><li><p>Add a form with input elements</p></li>
+                                          <li><p>Create a method which will be called by the <code>oninput</code> handler</p></li>
+                                          <li>Use the <code>value</code> property of your input fields to populate the page.</li>
+                                        </section>
+                                        
+                                          <section><!-- using objects -->
+                                          <h3>Functions</h3>
+                                          <p>Map input to output</p>
+                                          <p>Cause side effects</p>
+                                          <p>Fuctions which are called specifically for their side effects are <strong>procedures</strong></p>
+                                          <pre><code>function addtwo(x) {
+  return x+2;
+}</code></pre>
+                                          <pre><code>function timestwo(x) {
+  return x+x;
+  }</code></pre>
+                                        </section>
+                                        
+                                        <section>
+                                          <h3>guess the color (sic) game</h3>
+                                            <p>Task: Build a game where you guess the hex code of a colour.</p>
+                                            <p>Specification: Display a colour to the user, have them guess the correct hex code, multiple choice.</p>
+                                        </section>
+                                
+                                        
+                                        </section>
+                        </div>
+
+                </div>
+
+                <script src="../reveal.js/lib/js/head.min.js"></script>
+                <script src="../reveal.js/js/reveal.js"></script>
+
+                <script>
+
+                        // Full list of configuration options available at:
+                        // https://github.com/hakimel/reveal.js#configuration
+                        Reveal.initialize({
+                                controls: true,
+                                progress: true,
+                                history: true,
+                                center: true,
+
+                                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                                // Optional reveal.js plugins
+                                dependencies: [
+                                        { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                                        { src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                        { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                        { src: '../reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+                                        { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+                                        { src: '../reveal.js/plugin/notes/notes.js', async: true }
+                                ]
+                        });
+
+                </script>
+
+        </body>
+</html>
