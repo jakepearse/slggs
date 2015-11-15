@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=StackDemo()
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ StackDemo\n
+comment1.params=y
+comment1.target=void\ stackIn(int)
+comment1.text=\n\ put\ a\ new\ value\ into\ the\ stack\n\ simple\ wrapper\ for\ the\ push()\ method\ provided\ by\ Stack\n\ @param\ \ y\ the\ int\ to\ push\ into\ the\ stack\n
+comment2.params=
+comment2.target=void\ stackPeek()
+comment2.text=\n\ peek\ allows\ us\ to\ return\ the\ value\ on\ the\ top\ of\ the\ Stack\n\ without\ removing\ it\n
+comment3.params=
+comment3.target=int\ stackPop()
+comment3.text=\n\ remove\ (and\ return)\ the\ value\ on\ the\ top\ of\ the\ stack\n\ @\ return\ the\ value\ popped\ off\ the\ stack\n
+numComments=4
