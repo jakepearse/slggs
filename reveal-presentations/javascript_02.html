@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+
+        <head>
+                <meta charset="utf-8">
+
+                <title>Intro to JavaScript 2</title>
+
+                <meta name="description" content="intro to JavaScript 2">
+                <meta name="author" content="J Pearse">
+
+                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+                <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+                <link rel="stylesheet" href="../reveal.js/css/theme/blood.css" id="theme">
+
+                <!-- Code syntax highlighting -->
+                <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+                <!-- Printing and PDF exports -->
+                <script>
+                        var link = document.createElement( 'link' );
+                        link.rel = 'stylesheet';
+                        link.type = 'text/css';
+                        link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+                        document.getElementsByTagName( 'head' )[0].appendChild( link );
+                </script>
+
+                <!--[if lt IE 9]>
+                <script src="../reveal.js/lib/js/html5shiv.js"></script>
+                <![endif]-->
+        </head>
+
+        <body>
+
+                <div class="reveal">
+
+                        <!-- Any section element inside of this container is displayed as a slide -->
+                        <div class="slides">
+                                        <section>
+                                           <h3>Starter</h3>
+                                                    <ol>
+                                                      <li><p>Log in to moodle.</p></li>
+                                                      <li><p>Open your <strong>developer tools</strong> (F12 key in Chrome)</p></li>
+                                                      <li><p>Enter these expressions in your console, 1 per line</p></li>
+                                                      <pre><code>var a = 5;
+var b = a;
+a = 10;
+b;</code></pre>
+                                                      <li><p>Discuss the result with your neighbour.</p></li>
+                                                    </ol>
+                                          </section>
+                                                  
+                                        <section data-markdown>
+                                                <script type="text/template">
+                                                        ## More JavaScript
+                                                        L.O: Understanding operators and variables
+                                                         - All completed operator worksheet, completed 1a & 1b
+                                                         - Most have completed  1c
+                                                         - Some have started allAboutMe
+                                        </script>
+                                        </section>
+                                        
+                                        <section>
+                                                <h3>Literals</h3>
+                                                <p>Variables identify a value, that value can change over time.</p>
+                                                <p>A <strong>literal</strong> simply expresses the value itself. <strong>Literals</strong> don't stand for something else, </em>they <strong>literally</strong> are that value.<em></em></p>
+                                                <pre><code>197
+<·197;
+"Patch my boat with chewing gum";
+<·"Patch my boat with chewing gum";</code></pre>
+<p>Not very useful by themselves!</p>
+                                        </section>
+                                        
+                                        <section><!--3-->
+                                          <h3>Variables</h3>
+                                                <p>We can use variables to 'grasp' our values</p>
+                                                <pre><code>var name;
+</pre></code>
+                                                <p>Now we have a variable labelled <code>name</code> we have not given it a value so it has the special value <code>undefined</code></p>
+                                                <pre><code>name = "Joelle Rollo-Koster";
+</pre></code>
+                                                <p>The single equals operator is used for <em>assignment</em></p>
+                                                <p>The value <strong>returned</strong> by the expression on the right is assigned to the <em>variable</em> on the left</p>
+                                        </section><!--/3-->
+                                        
+                                        <section><!-- using objects -->
+                                          <h3>Not a number</h3>
+                                          <p>If we try to form an expression using a string and a number, we might get the special value</p>
+                                          <pre><code>NaN</code></pre>
+                                          <p>This is a particular oddity of JavaScript, although it's not a number it partially behaves like one!</p>
+                                          <pre><code>"tea" / 2;
+<·NaN</code></pre>
+                                          <p>For the most part, if you see NaN cropping up, it means you have tried to perform a mathematical operation on a string by mistake.</p>
+                                        </section>
+                                                
+                                                <section>
+                                                <h3>Boolean values</h3>
+                                                <p>In Boolean logic there are only two possible literal values</p>
+                                                <pre><code>true;
+</pre></code>
+                                                <pre><code>false;
+</pre></code>
+                                                <p>This type of value would be returned from a comparison expression</p>
+                                                <pre><code>27 <= 5;
+</pre></code>
+                                                <pre><code>2 * 5 === 10;
+</pre></code>
+                                                </section>
+                                                
+                                              <section>
+                                                <h3>Strings</h3>
+                                                <p>We have already seen the <em>string</em> literal.</p>
+                                                <p>As well as being a literal value strings are <strong>objects</strong></p>
+                                                <p>This means they have properties and methods.</p>
+                                                <p>Try:</p>
+                                                <pre><code>"one".length;
+</pre></code>
+                                                <p>the length property returns the number of characters in a string.</p>
+                                                <pre><code>"shouting!".toUpperCase();
+</pre></code>
+                                                <p>We will learn more about methods later.</p>
+                                                </section>
+                                                
+
+
+
+                        </div>
+
+                </div>
+
+                <script src="../reveal.js/lib/js/head.min.js"></script>
+                <script src="../reveal.js/js/reveal.js"></script>
+
+                <script>
+
+                        // Full list of configuration options available at:
+                        // https://github.com/hakimel/reveal.js#configuration
+                        Reveal.initialize({
+                                controls: true,
+                                progress: true,
+                                history: true,
+                                center: true,
+
+                                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                                // Optional reveal.js plugins
+                                dependencies: [
+                                        { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                                        { src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                        { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                        { src: '../reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+                                        { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+                                        { src: '../reveal.js/plugin/notes/notes.js', async: true }
+                                ]
+                        });
+
+                </script>
+
+        </body>
+</html>
