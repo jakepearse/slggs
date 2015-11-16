@@ -7,7 +7,7 @@
                 <title>Data Representation</title>
 
                 <meta name="description" content="Data Representation">
-                <meta name="author" content="J Pearse">
+                <meta name="author" content="jake" >
 
                 <meta name="apple-mobile-web-app-capable" content="yes" />
                 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -54,7 +54,7 @@
                                                   
                                         <section data-markdown>
                                                 <script type="text/template">
-                                                        ## The general radix rules
+                                                        ## Positional Numbering Systems
                                                         L.O: I can apply the radix rules to numbers of base *r*.
                                                         We mainly care about values of *r* which are powers of two
                                                         
@@ -72,61 +72,45 @@
                                                         We all know the denary system *r* = 10
                                                         
                                                         
-                                                        | r^*n* | ... | r^3 | r^2 | r^1 | r^0 |
+                                                        | r<sup>*n*</sup> | ... | r<sup>3</sup> | r<sup>2</sup> | r<sup>1</sup> | r<sup>0</sup> |
                                                         | --- | --- | --- | --- | ---| --- |
                                                         | ? | ... | thousands | hundreds |tens | units |
+                                                        | | | 0 | 9 | 9| 1 |
                                                         
                                                         We can get the value of a number by multiplying it with the number on top of the column
                                                         
-                                                        991 is (9 &mdot; 10^2) + (9 x 10^1) + (1 x 10^0)
+                                                        991 is (9 &middot; 10<sup>2</sup>) + (9 &middot; 10<sup>1</sup>) + (1 &middot; 10<sup>0</sup>)
                                         </script>
                                         </section>
                                         
                                         <section><!-- using objects -->
-                                          <h3>Relative file paths</h3>
-                                          <p>We don't always need to provide the complete (absolute) file path, to point to a file's location.</p>
-                                          <p>Often it's enough to provide the path from where in the file system we are right now.</p>
-                                          <p>This called the relative file path.</p>
+                                          <h3>Rule 1: place value</h3>
+                                          <p><em>n</em> = the number of columns from the right -1</p>
+                                          <p><em>r</em> = the base</p>
+                                          <p>Any column has a value of <big><em>r<sup> n</sup></em></big></p>
                                         </section>
                                                 
-                                        <section>
-                                          <h3>Hidden links</h3>
-                                          <p>To enable relative file paths every directory has a hidden link to the directory above it</p>
-                                          <pre><code>..</code></pre>
-                                          <p>A relative file path might look like this</p>
-                                          <pre><code>../images/myCatPicture.jpg</code></pre>
-                                          <p>It means: from here go up one folder, then go into the <em>images</em> folder.</p>
-                                                </section>
-                                                
+                                        
                                               <section>
-                                                <h3>Hypertext links</h3>
-                                                <p>We are familiar with hyper text links</p>
-                                                <pre><code>http://www.silkom.co.uk/profile.jpg</code></pre>
-                                                <p>The <em>http://</em> part tells us that this is not a local file.</p>
-                                                <p>We use relative file paths to make links between pages that are all part of the same site</p>
+                                                <h3>Rule 2: Maximum combinations</h3>
+                                                <p>The highest value number that can be represented is always equal to:</p>
+                                                <p><em>rn-1</em></p> 
                                                 </section>
                                                 
-                                              <section>
-                                                <h3>Hypertext links 2</h3>
-                                                <p>In our <em>html</em> files Hyper text links are written like</p>
-                                                <pre><code><a href="filepath">Click Ye Here</a></code></pre>
-                                                <p>There a 3 pieces to this anchor</p>
-                                                <ol><li>Opening tag (has the path inside)</li>
-                                                <li>Link text (the text we will show)</li>
-                                                <li>closing tag</li></ol>
-                                                </section>
+                                              <section data-markdown>
+                                              <script type="text/template">
+                                                ### Hex, base 16
+                                                Because we run out of numerals after 9 we use letters
                                                 
-                                                <section>
-                                                  <h3>Task</h3>
-                                                  <ol>
-                                                  <li>Download and extract the family.zip file to your area</li>
-                                                  <li>Create a set of folders matching the diagram <img src="img/dirStructure.png"></li>
-                                                  <li>Move the html files into the correct folders</li>
-                                                  <li>Correct all the broken links</li>
-                                                  <li>Link an image (local or remote) to each html file</li>
-                                                  </ol>
-                                                </section>
+                                                |10| 11 | 12 | 13 | 14 | 15 |
+                                                | --- |--- |--- |--- |---|
+                                                | A | B | C | D | E | F |
+                                                
+                                                This is especially popular because it neatly represents 2 bytes
 
+                                                </script>
+                                                </section>
+                                                
 
                         </div>
 
