@@ -1,0 +1,73 @@
+JavaScript
+Learners are expected to be able to follow and write basic JavaScript code. It is hoped they will get practical
+experience of JavaScript in their study of the course. They will not be expected to commit exact details of syntax
+to memory. Questions in the exam will not penalise learners for minor inaccuracies in syntax. Learners will be
+expected to be familiar with the JavaScript equivalents of the structures listed in the pseudocode section (with
+the exception of input and output (see below). They will not be expected to use JavaScript for Object Oriented
+programming or file handling. Questions will not be asked in JavaScript where something is passed to a subroutine
+by value or reference is relevant.
+Input
+Input will be taken in by reading values from a form. NB learners will not be expected to memorise the method for
+doing this as focus will be on what they do with that input once it is received.
+Output
+By changing the contents of an HTML element
+chosenElement = document.getElementById(“example”);
+chosenElement.innerHTML = “Hello World”;
+5
+By writing directly to the document
+document.write(“Hello World”);
+By using an alert box
+alert(“Hello World”);
+Should any other aspects of JavaScript be used they will be introduced and explained in the question.
+
+CSS
+Learners are expected to be able to use CSS directly inside elements using the style attribute
+<h1 style=”color:blue;”>
+and external style sheets. In the style sheets they should be able to use CSS to define the styling of elements:
+h1{
+	color:blue;
+}
+classes
+.infoBox{
+	
+background-color: green;
+}
+and Identifiers
+#menu{
+	 background-color: #A2441B
+}
+5
+They are expected to be familiar with the following properties.
+background-color
+border-color
+border-style
+border-width
+color with named and hex colours
+font-family
+font-size
+height
+width
+Any other properties used will be explained in the question.
+
+HTML
+Learners are expected to have an awareness of the following tags. Any other tags used will be introduced in the
+question.
+<html>
+<link> to link to a CSS file
+<head>
+<title>
+<body>
+<h1> <h2> <h3>
+<img> including the src, alt, height and width attributes.
+<a> including the href attribute.
+<div>
+<form>
+5
+<input> where the input is a textbox (i.e. has the attribute type=”text” and another attribute name to
+identify it) or a submit button (i.e. has the attribute type=”submit”)
+<p>
+<li>
+<ol>
+<ul>
+<script>
+Any other elements used will be explained in the question.
