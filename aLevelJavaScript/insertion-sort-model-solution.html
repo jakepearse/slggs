@@ -1,0 +1,20 @@
+<html>
+<script>
+function ins(list){
+  sorted = list.slice(0);
+  var temp;
+  var i;
+  var j;
+for (i = 1; i < sorted.length; i++){
+  j = i;
+  while ( j > 0 && sorted[j-1] > sorted[j]) {
+    temp = sorted[j] ;
+    sorted[j] = sorted[j-1] ;
+    sorted[j-1] = temp ;
+    j -- ;
+    }
+  }
+  return sorted;
+}
+</script>
+</html>
