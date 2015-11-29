@@ -41,74 +41,80 @@
                         <!-- Any section element inside of this container is displayed as a slide -->
                         <div class="slides">
                                         <section>
-                                           <h3>Starter</h3>
-                                           <h4>The imaginary base-6 (sexnary? sounds too weird!) numbering system</h4>
+                                           <h3>Starter - Paper and Calculators to the ready</h3>
+                                           <h4>The unfashionable base-6 ( sexnary ? ) numbering system</h4>
                                                     <ul>
-                                                      <li><p>The first column (units) can have 0-5 values</p></li>
-                                                      <li><p>add another column and you have 6<sup>2</sup> including zero</p></li>
+                                                      <li><p>The first column (units) can have 0-5 as values</p></li>
+                                                      <li><p>add another column and you have 6<sup>2</sup> including zero (0-35)</p></li>
                                                       <li><p>add a third column for 6<sup>3</sup> possible values</p></li>
                                                     </ul>
-                                                    <p>How many columns do we need to represent the number 46656 (denary) ?</p>
+                                                    <p>How many columns do we need to represent the number 46656 (denary) ? </p>
                                           </section>
                                                   
                                         <section data-markdown>
                                                 <script type="text/template">
                                                         ## Positional Numbering Systems
                                                         L.O: I can apply the radix rules to numbers of base *r*.
-                                                        We mainly care about values of *r* which are powers of two
+                                                        We mainly care about values of *r* which are exponents of 2
                                                         
                                                         | r | Name |
                                                         | ------ | ------ |
                                                         | 2 | Binary |
-                                                         |8| Octal|
-                                                         |16| Hexadecimal (abr. Hex)|
+                                                        | 8 | Octal |
+                                                        | 16| Hexadecimal (abr. Hex)|
                                         </script>
                                         </section>
                                         
-                                                                                <section data-markdown>
-                                                <script type="text/template">
-                                                        ## Denary
-                                                        We all know the denary system *r* = 10
+                                                <section data-markdown>
+                                                  <script type="text/template">
+                                                    ## Denary
+                                                    We all know the denary system *r* = 10
+
+                                                    | r<sup>*n*</sup> | ... | r<sup>3</sup> | r<sup>2</sup> | r<sup>1</sup> | r<sup>0</sup> |
+                                                    | --- | --- | --- | --- | ---| --- |
+                                                    | ? | ... | thousands | hundreds |tens | units |
+                                                    | | | 0 | 9 | 9| 1 |
+                                                    
+                                                    - We can get the value of a number by multiplying it with the number on top of the column
                                                         
-                                                        
-                                                        | r<sup>*n*</sup> | ... | r<sup>3</sup> | r<sup>2</sup> | r<sup>1</sup> | r<sup>0</sup> |
-                                                        | --- | --- | --- | --- | ---| --- |
-                                                        | ? | ... | thousands | hundreds |tens | units |
-                                                        | | | 0 | 9 | 9| 1 |
-                                                        
-                                                        We can get the value of a number by multiplying it with the number on top of the column
-                                                        
-                                                        991 is (9 &middot; 10<sup>2</sup>) + (9 &middot; 10<sup>1</sup>) + (1 &middot; 10<sup>0</sup>)
+                                                    - 991 can be expressed in terms of positional value
+                                                    - *991= (9 &middot; 10<sup>2</sup>) + (9 &middot; 10<sup>1</sup>) + (1 &middot; 10<sup>0</sup>)*
                                         </script>
                                         </section>
                                         
                                         <section><!-- using objects -->
                                           <h3>Rule 1: place value</h3>
-                                          <p><em>n</em> = the number of columns from the right -1</p>
+                                          <p><em>n</em> = the number of columns removed from the least significant</p>
                                           <p><em>r</em> = the base</p>
                                           <p>Any column has a value of <big><em>r<sup> n</sup></em></big></p>
+                                          <p><strong>Any number raised the power 0 = 1, ask your maths teacher!</strong></p>
                                         </section>
                                                 
                                         
                                               <section>
                                                 <h3>Rule 2: Maximum combinations</h3>
+												<h4> Sarah's Rule </h4>
                                                 <p>The highest value number that can be represented is always equal to:</p>
-                                                <p><em>rn-1</em></p> 
-                                                </section>
+                                                <p><em>r<sup>n</sup>-1 ( Base <sup>columnsCountedFromRight</sup> - 1 )</em></p>
+                                                <p>Why - 1?</p>
+                                                <p class="fragment">Because one combination is used for 0</p> 
+                                             </section>
                                                 
                                               <section data-markdown>
                                               <script type="text/template">
                                                 ### Hex, base 16
+                                                Hex is a 'human readable' positional numbering system used to make binary easier to digest
                                                 Because we run out of numerals after 9 we use letters
                                                 
                                                 |10| 11 | 12 | 13 | 14 | 15 |
                                                 | --- |--- |--- |--- |---|
                                                 | A | B | C | D | E | F |
                                                 
-                                                This is especially popular because it neatly represents 2 bytes
+                                                This is especially popular because it neatly represents 1 nibble per numerial.
 
                                                 </script>
                                                 </section>
+                                                
                                                 
 
                         </div>
