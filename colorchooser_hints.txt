@@ -1,0 +1,35 @@
+// some helpful ideas for colorchooser
+
+// you might want to start with these elements in place
+
+<div id="color-panel" style="height:25px; width:150px;"></div>
+<button id="0" onClick="toDO()"></button>
+
+// JavaScript Arrays are easy-peasy they expand when you add elements
+var myArray = [];
+myArray.append("foo");
+myArray[0];
+
+//loop over myArray
+for (var i = 0; i < myArray.length; i++) {
+  // do something with myArray[i];
+  }
+
+
+// JavaScript dosnt have a random integer in range fuction in the standard library
+  function randomRange(min,max){
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+   
+// numbers have methods too (mind === blown)
+// the .toString method takes a radix (base) and generates a string
+// in that base
+
+  function randomHex() {
+    x = randomRange(0,256).toString(16);// make it a hex (base 16)
+    if (x.length < 2) { // single digit hexadecimals need a leading 0
+      return "0" + x;
+    } else {
+      return x;
+    }
+  }

@@ -1,0 +1,87 @@
+<!--
+   hello.html
+   
+   Copyright 2015 jake <jake@sabertooth>
+   
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+   
+   
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>Hello</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.23.1" />
+</head>
+
+<body>
+  <div id="color-panel" style="height:25px; width:150px;"></div>
+
+<ol>
+  <li><button id="0" onClick="result(this.innerHTML)"></button></li>
+  <li><button id="1" onClick="result(this.innerHTML)"></button></li>
+  <li><button id="2" onClick="result(this.innerHTML)"></button></li>
+</ol>
+
+</body>
+
+<script>
+  function randomRange(min,max){
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+    
+  function randomHex() {
+    x = randomRange(0,256).toString(16);
+    if (x.length < 2) {
+      return "0" + x;
+    } else {
+      return x;
+    }
+  }
+  
+  var r = randomHex();
+  var g = randomHex();
+  var b = randomHex();
+  
+  ar = [];
+  ar[randomRange(0,3)] = "#"+r+g+b;
+    
+  for (var i = 0; i < 3; i++) {
+    if (ar[i] === undefined) {
+      document.getElementById(i).innerHTML="#"+randomHex()+randomHex()+randomHex();
+    } else {
+      document.getElementById(i).innerHTML ="#"+r+g+b;
+    }
+  }
+  
+  document.getElementById("color-panel").style.background ="#"+r+g+b;
+  console.log("#"+r+g+b);
+  
+  function result(guess){
+    if (guess==="#"+r+g+b) {
+      alert("yay");
+    } else {
+      alert("rubbish!")
+  }
+      location.reload();
+    }
+  
+  </script>
+</html>
