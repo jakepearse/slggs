@@ -1,0 +1,53 @@
+<html>
+<head></head>
+<body>
+  <p>Use the console F12 to run Sorter.bub(unsortedList) or Sorter.randArray(length)</p>
+  <script>
+  // sorter is a JavaScript module
+  //  run it in the console with Sorter.bub(unsortedArray);
+  // or Sorter.randArray(n)
+  
+  var Sorter = (function() {
+    var methods = {};
+  
+    methods.bub = function (list){ // bub is a bubble sorter
+      
+      var t1 = performance.now(); // I want to time how long bub takes
+      
+      sorted = list.slice(0); // this will make a copy of list
+      
+      // bubble sort algorithm - see page 52
+      var swapped = true;
+      while(swapped) {
+        swapped = false;
+        for (var i = 0; i<sorted.length-1 ; i++){ 
+          if (sorted[i]>sorted[i+1]){
+            var tmp = sorted[i];
+            sorted[i] = sorted[i+1];
+            sorted[i+1]=tmp;
+            swapped = true;
+            }
+          }
+        }
+      // end of buble sort
+      console.log("bub took :"+ (performance.now()-t1) +" seconds"); //show how long it took
+      return sorted
+    }
+    // end of bub
+    
+    methods.randArray = function(size){// randArray returns a size length random array of integers < 100
+      a = [];
+      for (var i = 0; i<size; i++){
+        a.push(Math.trunc(Math.random()*100));//Math.random() returns < 1, Math.trunc() chops off the floating part
+      }
+      return a;
+    }
+    // end of randArray
+    
+    
+    return methods;
+  }());
+  
+  </script>
+</body>
+</html>
