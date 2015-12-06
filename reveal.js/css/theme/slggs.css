@@ -12,20 +12,21 @@
  * GLOBAL STYLES
  *********************************************/
 body {
+/*
   background: #add9e4;
   background: -moz-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
   background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #f7fbfc), color-stop(100%, #add9e4));
   background: -webkit-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
   background: -o-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
   background: -ms-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
-  background: radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
-  background-color: #f7fbfc; }
+  background: radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%); */
+  background-color: #00003f; }
 
 .reveal {
   font-family: 'Open Sans', sans-serif;
   font-size: 36px;
   font-weight: normal;
-  color: #333; }
+  color: #ff4; }
 
 ::selection {
   color: #fff;
@@ -41,7 +42,7 @@ body {
  *********************************************/
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
   margin: 0 0 20px 0;
-  color: #333;
+  color: #ff0;
   font-family: 'Quicksand', sans-serif;
   font-weight: normal;
   line-height: 1.2;
@@ -151,8 +152,8 @@ font-size: 1em;}
 
   max-height: 800px;
   word-wrap: normal;
-  background: #3F3F5F;
-  color: #DCDCDC; }
+  background: #000;
+  color: #0f0; }
 
 .reveal table {
   margin: auto;

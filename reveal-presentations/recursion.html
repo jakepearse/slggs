@@ -15,7 +15,7 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
                
                 <link rel="stylesheet" href="../reveal.js/css/reveal.css">
-                <link rel="stylesheet" href="../reveal.js/css/theme/blood.css" id="theme">
+                <link rel="stylesheet" href="../reveal.js/css/theme/slggs.css" id="theme">
 
                 <!-- Code syntax highlighting -->
                 <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
@@ -40,11 +40,57 @@
 
                         <!-- Any section element inside of this container is displayed as a slide -->
                         <div class="slides">
-                                        
+                                      <section data-markdown>
+                                      ###Functions
+                                      - Map input to output.
+- Input is parameters or arguments (synomonus).
+- Output is a returned value.
+                                      - For a given input, always return the same output.
+                                      
+                                      Pure functions are self-contained, they do not cause 'side effects'
+                                      This type of function is often called a black-box function.
+                                      </section>
                                   
+                                    <section data-markdown>
+                                    ###Procedures
+                                    Functions which are called only for their side effects are called procedures
+                                    Any value returned from a procedure is usally ignored.
+                                    
+                                    ###Methods
+                                    Functions (including procedures) which are contained within an *object* are called methods.
+                                    </section>
+                                    
                                     <section>
+                                    <h3>Function calls</h3>
+                                    <p>The act of invoking a function is known as a function call, fuction calls are always followed by 0 or more paremeters enclosed in brackets</p>
+                                    <p>example function calls</p>
+                                    <pre><code>f()
+f(p1,p2,...,pn)</code></pre>
+
+<p>Not a function call</p>
+                                    <pre><code>f</code></pre>
+</section>
+
+                                    
+                                    <section>
+                                    <p>Examples</p>
+                                    <pre><code>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    </code></pre>
+                                    </section>
+                                    
+                                    
+                                    <section>
+                                      
+                                      
                                         <h3>Well defined self-reference</h3>
-                                        <blockquote>You're Jewish if, you're Abrahams wife Sarah or your mother is Jewish</blockquote>
+                                        <blockquote>You're Jewish if you're Abraham's wife Sarah, or your mother is Jewish</blockquote>
 <a href="https://www.cs.cmu.edu/~cburch/survey/recurse/recursion.html">cs.cmu.edu</a>                                        
                                         </section>
                                         <section>
