@@ -1,0 +1,15 @@
+<html>
+<script>function chopsearch(A,target){
+  var half = parseInt(A.length /2);
+
+  if (target === A[half]) {
+    return A[half];
+  }
+  if (target > A[half]){
+    return chopsearch(A.slice(half,A.length),target);
+  } else {
+    return chopsearch(A.slice(0,half),target);
+  }
+}
+</script>
+</html>
