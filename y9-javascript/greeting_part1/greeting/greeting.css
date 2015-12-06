@@ -1,0 +1,18 @@
+/* You must place your Style-rules in this file */
+
+/* replace these nasty rules with your own */ 
+
+h1 {
+  color: cyan;
+  border: 18px inset magenta;
+  }
+
+p {
+  color: white;
+  border: 1px dashed yellow;
+  }
+
+body {
+  background-color: gray;
+  margin: 0px;
+  }

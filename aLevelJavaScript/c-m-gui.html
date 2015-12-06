@@ -1,0 +1,101 @@
+<html>
+<head>
+
+</head>
+
+<body>
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="700" height="400">
+    <style>
+      .boat {
+        stroke:#000;
+        fill: #ff44a0
+      }
+      .cannibal {
+        stroke: black;
+        fill: red;
+      }
+    </style>
+    <rect id="river" x="110" y="10" height="1400" width="300" style="stroke:#000; fill: #0000FF"></rect>
+  </svg>
+
+</body>
+<script> // embedded javascript
+  var svg = document.getElementsByTagName('svg')[0]; //Get svg element
+  var boatElement = document.createElementNS("http://www.w3.org/2000/svg", 'rect'); //Create a path in SVG's namespace
+  var canibalElement;
+  var x_pos;
+  var y_pos;
+  var MAX_CANNIBALS = 3;
+  var MAX_MISSONARYS = 3;
+  function draw(state){
+    
+    // clear out all the old circles
+    var old_circles = svg.getElementsByTagNameNS("http://www.w3.org/2000/svg","circle");
+    while (old_circles.length > 0){
+      var o = old_circles[0];
+      o.parentNode.removeChild(o);
+    }
+
+    // lets get the boat in place first
+    boatElement.setAttribute("class","boat"); //Set the elements class data
+    boatElement.setAttribute("y","140"); //Set path's data
+    boatElement.setAttribute("height","50"); //Set height data
+    boatElement.setAttribute("width","90"); //Set width data
+    
+    // put the boat on the correct side of the river
+    if (state[2] < 1){ // boat on right
+      boatElement.setAttribute("x","300"); //Set x data
+    } else { // boat on left
+      boatElement.setAttribute("x","120"); //Set x data
+    }
+    
+    // add the finished boat to the svg
+    svg.appendChild(boatElement); 
+    
+    // lets draw the cannibals
+    
+    //how many on the left
+    for (var i = 0; i< state[0]; i++){
+      y_pos = 50 + i * 30;
+        cannibalElement = document.createElementNS("http://www.w3.org/2000/svg", 'circle'); //Create a circle in SVG's namespace
+        cannibalElement.setAttribute("class","cannibal"); //Set the elements class data
+        cannibalElement.setAttribute("cx","50");
+        cannibalElement.setAttribute("cy",""+y_pos);
+        cannibalElement.setAttribute("r", "20");
+        svg.appendChild(cannibalElement);
+      }
+      // how many on the right
+      var righthand_cannibals = MAX_CANNIBALS - state[0];
+      for (var i = 0; i < righthand_cannibals; i++){
+        y_pos = 50 + i * 30;
+        cannibalElement = document.createElementNS("http://www.w3.org/2000/svg", 'circle'); //Create a circle in SVG's namespace
+        cannibalElement.setAttribute("class","cannibal"); //Set the elements class data
+        cannibalElement.setAttribute("cx","450");
+        cannibalElement.setAttribute("cy",""+y_pos);
+        cannibalElement.setAttribute("r", "20");
+        svg.appendChild(cannibalElement);
+      }
+      // now draw the left hand missonarys
+      for (var i = 0; i< state[1]; i++){
+      y_pos = 250 + i * 30;
+        missonaryElement = document.createElementNS("http://www.w3.org/2000/svg", 'circle'); //Create a circle in SVG's namespace
+        missonaryElement.setAttribute("class","missonary"); //Set the elements class data
+        missonaryElement.setAttribute("cx","50");
+        missonaryElement.setAttribute("cy",""+y_pos);
+        missonaryElement.setAttribute("r", "20");
+        svg.appendChild(missonaryElement);
+      }
+      // how many on the right
+      var righthand_cannibals = MAX_MISSONARYS - state[1];
+      for (var i = 0; i < righthand_cannibals; i++){
+        y_pos = 250 + i * 30;
+        missonaryElement = document.createElementNS("http://www.w3.org/2000/svg", 'circle'); //Create a circle in SVG's namespace
+        missonaryElement.setAttribute("class","missonary"); //Set the elements class data
+        missonaryElement.setAttribute("cx","450");
+        missonaryElement.setAttribute("cy",""+y_pos);
+        missonaryElement.setAttribute("r", "20");
+        svg.appendChild(missonaryElement);
+      }
+  }
+</script>
+</html>
