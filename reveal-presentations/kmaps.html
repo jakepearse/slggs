@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+
+        <head>
+                <meta charset="utf-8">
+
+                <title>Karnaugh maps</title>
+
+                <meta name="description" content="Karnaugh maps">
+                <meta name="author" content="J Pearse">
+
+                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+               
+                <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+                <link rel="stylesheet" href="../reveal.js/css/theme/slggs.css" id="theme">
+
+                <!-- Code syntax highlighting -->
+                <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+                <!-- Printing and PDF exports -->
+                <script>
+                        var link = document.createElement( 'link' );
+                        link.rel = 'stylesheet';
+                        link.type = 'text/css';
+                        link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+                        document.getElementsByTagName( 'head' )[0].appendChild( link );
+                </script>
+
+                <!--[if lt IE 9]>
+                <script src="lib/js/html5shiv.js"></script>
+                <![endif]-->
+        </head>
+
+        <body>
+
+                <div class="reveal">
+
+                        <!-- Any section element inside of this container is displayed as a slide -->
+                        <div class="slides">
+                                      <section data-markdown>
+                                      ###Logic &amp; Boolean  algebra
+                                      #####Chapter 14
+                                      - George Bool
+                                      - Augustus De Morgan
+                                      </section>
+                                  
+                                    <section data-markdown>
+                                    ###Common logical operations
+                                      - **&not;** negation (not)
+                                      - **&and;** conjuction (and)
+                                      - **&or;** disjunction (or)
+                                    </section>
+                                    
+                                    <section data-markdown>
+                                      ### Conjunction
+                                      #####*P&and;Q*
+                                      *P* | *Q* | *P&and;Q*
+                                      :---:|:---:|:---:
+                                       0 | 0 | 0
+                                       1 | 0 | 0
+                                       0| 1 | 0
+                                       1 | 1 | 1
+                                   
+</section>
+
+                                    
+                                                        <section data-markdown>
+                                      ### Disjunction
+                                      #####*P&or;Q*
+                                      *P* | *Q* | *P&or;Q*
+                                      :---:|:---:|:---:
+                                       0 | 0 | 0
+                                       1 | 0 | 1
+                                       0| 1 | 1
+                                       1 | 1 | 1
+                                   
+</section>
+                                    
+                    <section data-markdown>
+                                      ### Negation
+                                      #####*&not;P*
+                                      *P* | *&not;P*
+                                      :---:|:---:
+                                       0 | 1 
+                                       1 | 0
+                                       ---
+                                       #####*&not; &not; P* = *P*
+                                       #####*P &and; &not; P* = 0
+                                       #####*P &or; &not; P* = 1
+
+                                   
+</section>
+
+                               
+                                                          <section data-markdown>
+                                      ### Properties of logical connectives
+                                      #####Associative Conjunction
+                                      *P &and;* (Q &and; R)* = *Q &and;* (P &and; R)*
+                                      
+                                      as in addition
+                                      
+                                      *a + (b + c)* = *(a + b) + c*
+                                     
+                                      ---
+                                      #####Commutative Conjunction
+                                      *P &and; Q* = *Q &and; P*
+</section>
+
+                                                          <section data-markdown>
+                                      ### Properties of logical connectives
+                                      #####Distributive Disjunction
+                                      *P &and; (Q &or; R)* = *(P &and; Q) &or; (P &and; R)*
+                                      
+                                      We can reformulate disjunction, as in elementary algebra.
+                                      
+                                      Thanks De Morgan.
+</section>
+
+
+                                                          <section data-markdown>
+                                      ### Simplification
+                                      True &or; P = True
+                                      
+                                      True &and; P = P
+                                      ##### Proof that:
+                                      *P &or; P &and; Q* = P
+                                      
+                                      &and; has higher precedence than &or;
+                                      - P &or; P &and; Q = P &or; P &and; P &or; Q
+                                      - = P &and; (True &or; Q)   
+                                      - = P &and; True
+                                      - = P
+</section>
+
+
+                                                          <section data-markdown>
+                                      ### De Morgan's Laws
+                                      >&not;(P&or;Q) = &not;P&and;&not;Q
+                                      
+                                      also
+                                      
+                                      >&not;(P&and;Q) = &not;P&or;&not;Q
+</section>
+
+                                                          <section data-markdown>
+                                      ### Extra gates
+                                      #####NAND (not and), NOR (not or), XOR:
+                                      Gate | Expression 
+                                      --- | ---
+                                      NAND | &not(P&and;Q)
+                                      NOR | &not(P&or;Q)
+                                      XOR | (P&or;Q)&and;&not;(P&and;Q)
+</section>
+
+                                                          <section data-markdown>
+                                      ### Karnaugh Maps
+                                      K Maps provide a graphical way of minimising logical expressions
+                                      
+                                      *&not;P&or;&not;Q*
+                                      
+                                      P\Q | 0 | 1 
+                                      :--- | :---: | :--:
+                                      **0** |1 |1 
+                                      **1** | 1| 0
+                                      
+</section>
+
+                                                          <section data-markdown>
+                                      ### Karnaugh Maps
+                                      Blocks:
+                                      - Must have no Zeros in them
+                                      - Not be diagonal
+                                      - Be as large as possible
+                                      - Must encompass every 1
+                                      - Can overlap and "wrap around"
+                                      - Be as few as possible
+                                      
+
+                                      
+</section>
+
+
+                                                          <section data-markdown>
+                                                            ### Page 181 Question 4
+                                                            &not;P&and;Q&and;R&and;S&or;&not;P&and;Q&and;R&and;&not;S&or;P&and;Q&and;R&and;S&or;P&and;Q&and;R&and;&not;S
+                                                            
+                                                            RS\PQ | 00 | 01 | 11 | 10 
+                                                            :--- | :---: | :--: | :---: | :---:
+                                                            **00** | | | |  
+                                                            **01** | | | |
+                                                            **11** | | | |
+                                                            **10** | | | |
+</section>
+
+
+                                                          <section data-markdown>
+                                                            ### Page 181 Question 4
+                                                            &not;P&and;Q&and;R&and;S&or;&not;P&and;Q&and;R&and;&not;S&or;P&and;Q&and;R&and;S&or;P&and;Q&and;R&and;&not;S
+                                                            
+                                                            my way: 1. group all the conjunctive expressions
+                                                            
+                                                            &not;P&and;Q&and;R&and;S&or;
+                                                            
+                                                            &not;P&and;Q&and;R&and;&not;S&or;
+                                                            
+                                                            P&and;Q&and;R&and;S&or;
+                                                            
+                                                            P&and;Q&and;R&and;&not;S
+                                                            
+</section>
+
+
+                                                          <section data-markdown>
+                                                            ### Page 181 Question 4
+                                                                       &not;P&and;Q&and;R&and;S&or;&not;P&and;Q&and;R&and;&not;S&or;P&and;Q&and;R&and;S&or;P&and;Q&and;R&and;&not;S
+                                                            
+                                                            my way 2: remove P&or;&not;P type expressions
+                                                            
+                                                            ~~&not;P&and;~~Q&and;R~~&and;S~~&or;
+                                                            
+                                                            ~~&not;P&and;~~Q&and;R~~&and;&not;S~~&or;
+                                                            
+                                                            ~~P&and;~~Q&and;R~~&and;S~~&or;
+                                                            
+                                                            ~~P&and;~~Q&and;R~~&and;&not;S~~
+                                                            
+                                                            Oh ... that's it.
+                                                            
+</section>
+
+
+
+
+                        </div>
+
+                </div>
+
+                <script src="../reveal.js/lib/js/head.min.js"></script>
+                <script src="../reveal.js/js/reveal.js"></script>
+
+                <script>
+
+                        // Full list of configuration options available at:
+                        // https://github.com/hakim../reveal.js.js#configuration
+                        Reveal.initialize({
+                                controls: true,
+                                progress: true,
+                                history: true,
+                                center: true,
+
+                                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                                // Optional reveal.js plugins
+                                dependencies: [
+                                        { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                                        { src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                        { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                        { src: '../reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+                                        { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+                                        { src: '../reveal.js/plugin/notes/notes.js', async: true }
+                                ]
+                        });
+
+                </script>
+
+        </body>
+</html>
