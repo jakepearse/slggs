@@ -10,11 +10,11 @@ var APP = (function(){
   
   var state = [];
   public.setup = function(cannibals,missonarys,boat_cap){
-    TOTAL_CANNIBALS = cannibals
-    TOTAL_MISSONARYS = missonarys;
-    MAX_BOAT_CAP = boat_cap
-    state.push(cannibals);
-    state.push(missonarys);
+    TOTAL_CANNIBALS = parseInt(cannibals);
+    TOTAL_MISSONARYS = parseInt(missonarys);
+    MAX_BOAT_CAP = parseInt(boat_cap);
+    state.push(TOTAL_CANNIBALS);
+    state.push(TOTAL_MISSONARYS);
     state.push(1);
   }
   
@@ -39,8 +39,8 @@ var APP = (function(){
   public.doMove = function(move,current_state){
     var new_state =[];
     if (checkMove(move,current_state)){
-      new_state.push(current_state[0] + move[0]);
-      new_state.push(current_state[1] + move[1]);
+      new_state.push(parseInt(current_state[0]) + move[0]);
+      new_state.push(parseInt(current_state[1]) + move[1]);
       new_state.push(current_state[2] + move[2]);
       return new_state;
     } else {
@@ -73,5 +73,83 @@ var APP = (function(){
     return move_set; // return the list
   } // end of getMoves
   
+  public.getState= function(){
+    return state;
+  }
+  
+  public.breadthFirstSearch = function(key){
+    var current = makeNode(key,null);
+    //current.distance = Infinity;
+    var nextList =[];
+    var visitList =[];
+    var q = [];
+    q.push(current);
+    visitList.push(current.state);
+    while (q.length > 0){
+      current = q.shift();
+      if (winner(current.state)){
+        return buildChain(current);
+      }
+      nextList = public.getMoves(current.state);
+      //console.log(nextList);
+      for (var i = 0; i < nextList.length; i++){
+        var nextState = public.doMove(nextList[i],current.state);
+        var nextNode = makeNode(nextState,current);
+        if ( !public.inList(visitList,nextNode.state) && !loser(nextNode.state)){
+          q.push(nextNode);
+          visitList.push(nextNode.state);
+        }
+      }
+    }
+    
+    function buildChain(chain){
+      if (chain.parent===null){
+        console.log(chain.state);
+        return;
+      }
+      console.log(chain.state);
+      buildChain(chain.parent);
+    }
+      
+    function makeNode(state,parent){
+      var node = {};
+      node.state = state;
+      if (parent===null){
+      node.distance = 0;
+      } else {
+        node.distance = parent.distance +1;
+        }
+      node.parent = parent;
+      return node;
+    }
+  }
+  
+  public.inList = function(l,e){
+    var hash = {};
+    for (var i = 0; i<l.length;i++){
+      hash[l[i]]=i;
+    }
+     if (hash.hasOwnProperty(e)){
+       return true;
+     }
+     return false;
+   }
+  
+  function loser(state){
+    if ( (state[0]>state[1] && state[1] !==0) || (TOTAL_CANNIBALS-state[0]>TOTAL_MISSONARYS-state[1] && TOTAL_MISSONARYS-state[1]!==0)){
+     return true;
+     }
+     return false;
+   }
+  
+  function winner(state){
+    if (state[1]===0){
+      return true;
+    }
+    return false;
+  }
+  
   return public;
+  
+  
 }());

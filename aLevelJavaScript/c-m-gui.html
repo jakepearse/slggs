@@ -1,9 +1,15 @@
 <html>
 <head>
-
+<script src="c-m-puzzle.js"></script>
 </head>
 
 <body>
+  <button onClick="location.reload()">Reset</button>
+  <p>Cannibals are red blobs.</p>
+<p>Missionaries are black blobs.</p>
+<p>Missionaries must never be outnumbered on either side of the river.</p>
+<p>Move all missionaries across the river.</p>
+
   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="700" height="400">
     <style>
       .boat {
@@ -17,8 +23,9 @@
     </style>
     <rect id="river" x="110" y="10" height="1400" width="300" style="stroke:#000; fill: #0000FF"></rect>
   </svg>
-
+<div id="buttonWrapper"></div>
 </body>
+
 <script> // embedded javascript
   var svg = document.getElementsByTagName('svg')[0]; //Get svg element
   var boatElement = document.createElementNS("http://www.w3.org/2000/svg", 'rect'); //Create a path in SVG's namespace
@@ -98,4 +105,57 @@
       }
   }
 </script>
+<script>
+  // set up and run the game
+var MC = prompt("how many cannibals?");
+var MM = prompt("how many missionaries?");
+var BC = prompt("how many boat passengers?");
+APP.setup(MC,MM,BC);
+var curState = APP.getState();// this is waste of time really
+draw(curState);
+nextMoves=APP.getMoves(curState);
+var wrapper = document.getElementById("buttonWrapper");// a place to put buttons
+updateButtons();
+
+function updateButtons(){
+  while (wrapper.hasChildNodes()) {// first clear out all the old buttons
+    wrapper.removeChild(wrapper.lastChild);
+  }
+for(var i =0;i<nextMoves.length;i++){
+  // now draw new one for each move
+  nbutton = document.createElement("button");// create a button element
+  nbutton.innerHTML = nextMoves[i];// it would be better if the move wasn’t just in the button text
+  nbutton.id ="button"+i;
+  nbutton.addEventListener("click", function(){ move(this); });
+  wrapper.appendChild(nbutton);
+}
+  function move(button){
+    m=button.innerHTML.split(",");// the move in the button is just text now, we could do better
+    for(var i =0;i<m.length;i++){
+      m[i]=parseInt(m[i])
+    }
+    nextState = APP.doMove(m,curState);
+    for(var i =0;i<nextState.length;i++){
+      nextState[i]=parseInt(nextState[i]);
+    }
+    curState = nextState;
+    nextMoves = APP.getMoves(curState);
+    draw(curState);
+    // mis
+    if ((curState[0]>curState[1] && curState[1] !==0) || (MC-curState[0]>MM-curState[1] && MM-curState[1]!==0)){
+      alert("you lose!");
+      return;
+    }
+    
+    if (curState[1]===0){
+      alert("you win!");
+      return;
+    }
+    updateButtons(nextMoves);
+  }
+}
+//}
+</script>
+The moves look like how may cannibals, how many missionaries, boat position
+</body>
 </html>

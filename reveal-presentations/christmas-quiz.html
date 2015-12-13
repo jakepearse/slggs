@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+        <head>
+                <meta charset="utf-8">
+
+                <title>Merry Christmas</title>
+
+                <meta name="description" content="Christmas quiz">
+                <meta name="author" content="J Pearse">
+
+                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+               
+                <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+                <link rel="stylesheet" href="../reveal.js/css/theme/slggs.css" id="theme">
+
+                <!-- Code syntax highlighting -->
+                <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+                <!-- Printing and PDF exports -->
+                <script>
+                        var link = document.createElement( 'link' );
+                        link.rel = 'stylesheet';
+                        link.type = 'text/css';
+                        link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+                        document.getElementsByTagName( 'head' )[0].appendChild( link );
+                </script>
+
+                <!--[if lt IE 9]>
+                <script src="lib/js/html5shiv.js"></script>
+                <![endif]-->
+        </head>
+
+        <body>
+
+                <div class="reveal">
+
+                        <!-- Any section element inside of this container is displayed as a slide -->
+                        <div class="slides">
+                                      <section data-markdown>
+                                      ###Where's the gold?
+                                      - Two boxes are labeled "A" and "B".
+                                      - A sign on box A says
+                                      >"The sign on box B is true and the gold is in box A".
+                                      - A sign on box B says
+                                      >"The sign on box A is false and the gold is in box A".
+                                      
+                                      Assuming there is gold in one of the boxes, which box contains the gold?
+
+
+                                      </section>
+                                  
+                                    <section data-markdown>
+                                    ### Peer assessment
+                                    
+                                    If you still need to do your peer assessment do it now.
+                                    The form is on moodle.
+                                    
+                                    If you have already done it pair up and take a puzzle sheet.
+                                    
+                                    If we have time &amp; **everyone** has completed peer assessment we will play a kahoot quiz.
+                                    </section>
+
+
+
+
+                        </div>
+
+                </div>
+
+                <script src="../reveal.js/lib/js/head.min.js"></script>
+                <script src="../reveal.js/js/reveal.js"></script>
+
+                <script>
+
+                        // Full list of configuration options available at:
+                        // https://github.com/hakim../reveal.js.js#configuration
+                        Reveal.initialize({
+                                controls: true,
+                                progress: true,
+                                history: true,
+                                center: true,
+
+                                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                                // Optional reveal.js plugins
+                                dependencies: [
+                                        { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                                        { src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                        { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                        { src: '../reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+                                        { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+                                        { src: '../reveal.js/plugin/notes/notes.js', async: true }
+                                ]
+                        });
+
+                </script>
+
+        </body>
+</html>
