@@ -110,6 +110,8 @@
 var MC = prompt("how many cannibals?");
 var MM = prompt("how many missionaries?");
 var BC = prompt("how many boat passengers?");
+MAX_CANNIBALS=MC;
+MAX_MISSONARYS=MM;
 APP.setup(MC,MM,BC);
 var curState = APP.getState();// this is waste of time really
 draw(curState);

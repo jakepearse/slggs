@@ -78,6 +78,8 @@ var APP = (function(){
   }
   
   public.breadthFirstSearch = function(key){
+    var nodes_visited = 0;
+    var t1 = performance.now(); // I want to time how long bub takes
     var current = makeNode(key,null);
     //current.distance = Infinity;
     var nextList =[];
@@ -87,7 +89,10 @@ var APP = (function(){
     visitList.push(current.state);
     while (q.length > 0){
       current = q.shift();
+      nodes_visited ++;
       if (winner(current.state)){
+        console.log("nodes visited="+nodes_visited);
+        console.log("bub took :"+ (performance.now()-t1) +" seconds"); //show how long it took
         return buildChain(current);
       }
       nextList = public.getMoves(current.state);
@@ -101,6 +106,40 @@ var APP = (function(){
         }
       }
     }
+  }
+  
+  public.depthFirstSearch = function(key){
+    var nodes_visited = 0;
+        var t1 = performance.now(); // I want to time how long bub takes
+    // let s be a stack
+    var s = [];
+    var v;
+    var v_edges;
+    var visited = [];
+    var current = makeNode(key,null);
+    s.push(current);
+    while (s.length > 0){
+      v = s.pop();
+      nodes_visited ++;
+      //console.log(v.state);
+      if (winner(v.state)){
+        console.log("nodes visited ="+nodes_visited);
+        console.log("bub took :"+ (performance.now()-t1) +" seconds"); //show how long it took
+        return buildChain(v);
+        } else if ( !public.inList(visited,v.state) && !loser(v.state)){
+        visited.push(v.state);
+        v_edges = public.getMoves(v.state);
+        for(var i = 0; i < v_edges.length; i++){
+          s.push(makeNode(public.doMove(v_edges[i],v.state),v));
+        }
+        v_edges = [];
+      }
+      else {
+        continue;
+      }
+    }
+  }
+  
     
     function buildChain(chain){
       if (chain.parent===null){
@@ -122,7 +161,7 @@ var APP = (function(){
       node.parent = parent;
       return node;
     }
-  }
+  
   
   public.inList = function(l,e){
     var hash = {};
