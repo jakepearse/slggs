@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+
+        <head>
+                <meta charset="utf-8">
+
+                <title>Style Sheets</title>
+
+                <meta name="description" content="Style Sheets">
+                <meta name="author" content="J Pearse">
+
+                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+               
+                <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+                <link rel="stylesheet" href="../reveal.js/css/theme/sky-mod.css" id="theme">
+
+                <!-- Code syntax highlighting -->
+                <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+                <!-- Printing and PDF exports -->
+                <script>
+                        var link = document.createElement( 'link' );
+                        link.rel = 'stylesheet';
+                        link.type = 'text/css';
+                        link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+                        document.getElementsByTagName( 'head' )[0].appendChild( link );
+                </script>
+
+                <!--[if lt IE 9]>
+                <script src="lib/js/html5shiv.js"></script>
+                <![endif]-->
+        </head>
+
+        <body>
+
+                <div class="reveal">
+
+                        <!-- Any section element inside of this container is displayed as a slide -->
+                        <div class="slides">
+                                        
+                                          <section data-markdown>
+                                                <script type="text/template">
+                                                        ### Starter
+                                                        #### Creating Sequenced instructions
+                                                        Last week you downloaded a zip file from moodle (family.zip) and extracted it to your area
+                                                        
+                                                        1. *Write* (on paper, your name at the top) a ***numbered*** set of **5** instructions to, *download* and *extract* ***styling.zip***.
+                                                         - **Assume the person has already found the moodle page!**
+                                                        2. *Pass* the instructions to your shoulder buddy
+                                                        3. *Follow* the instructions you have been passed
+                                                        4. *Rate* the instructions **out of 3**.
+                                        </script>
+                                        </section>
+                                        
+                                            <section data-markdown>
+                                                <script type="text/template">
+                                                        ## Todays topic is:
+                                                        #### Cascading Style Sheets (css)
+                                                        LO: I can change the look of my webpage with style rules.
+                                                        - All: Create and link a .css file,
+                                                        - Most: Create some style rules
+                                                        - Some: Animate a style rule.
+                                                        
+                                                        *Key terms:*
+                                                        **css, element, tag, identifier, property, link**
+                                                </script>
+                                        </section>
+                                        
+                                        
+                                        <section data-markdown>
+                                          <script type="text/template">
+                                                        ### Cascading Style Sheets (css)
+                                                        .css files are used to change the apperance of web pages.
+                                                        
+                                                        Style rules always start with a selector, the selector tells us which **element(s)** of the page the rule should be applied to.
+                                                        
+                                                        Today we will be working with tag selectors.
+                                                </script>
+                                        </section>
+                                        
+                                          <section>
+                                                        <h3>Selecting HTML Tags</h3>
+                                                        <p>Last week we were working with <em>anchor, elements</em> (aka. links)<p>
+                                                        <p>Anchors are created with the <code>&lt;a&gt;</code> tag
+                                                        <p>A css rule to apply to <strong>all</strong> anchor elements, looks like this</p>
+                                                        <pre><code>a {
+  color: red;
+}
+</code></pre>
+                                                        <p>The rule name is followed by a colon and the rule <em>property</em> ends with a semicolon</p>
+                                        </section>
+                                        
+                                        <section>
+                                          <h3>Linking style sheets</h3>
+                                          <p>To apply our style rules to the page the browser must be able to find our .css file.</p>
+                                          <p>A special <code>&lt;link&gt;</code> element must contain the <strong>relative file path</strong> to our style sheet.</p>
+                                          <p>This <code>&lt;link&gt;</code> element lives inside the <code>&lt;head&gt;</code> section of our <em>.html</em> file.</p>
+                                        <pre><code>&lt;head&gt;
+  &lt;link rel="stylesheet"
+  href="../css/myStyle.css"&gt;
+&lt;/head&gt;</code></pre>
+                                        </section>
+                                        
+                                        <section data-markdown>
+                                                <script type="text/template">
+                                                        ### Task
+                                                        Hopefully you have already downloaded and extracted styling.zip to your area (starter activity)
+                                                        1. In notepad++ create a new file and save as filetype type .css 
+                                                        
+                                                        2. find the &lt;link&gt; element in *styling.html* (you will need to use notepad++) and change the <code>href="thispart"</code> to point at your new filepath
+                                                        
+                                                        3. In your .css file make new rules to change the colors (sic) of the page.
+                                                        
+                                                        <p>Remember: the <strong>3b's b4 me</strong> rule!</p>
+                                                </script>
+                                        </section>
+
+                                        <section>
+                                          <h3>Styles and JavaScript</h3>
+                                          <p>We can also inject style rules directly using JavaScript</p>
+                                          <p>To do this we need to target elements by id property</p>
+                                          <p>We can add an id to any element, but id's must be unique.</p>
+                                        <pre><code>&lt;a id="myA"&gt;</code></pre>
+                                        <p>Now we can use the console to select it</p>
+                                        <pre><code>var e;
+e = document.getElementById("myA");
+e.style.color="red";</code></pre>
+                                        </section>
+
+                        </div>
+
+                </div>
+
+                <script src="../reveal.js/lib/js/head.min.js"></script>
+                <script src="../reveal.js/js/reveal.js"></script>
+
+                <script>
+
+                        // Full list of configuration options available at:
+                        // https://github.com/hakim../reveal.js.js#configuration
+                        Reveal.initialize({
+                                controls: true,
+                                progress: true,
+                                history: true,
+                                center: true,
+
+                                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                                // Optional reveal.js plugins
+                                dependencies: [
+                                        { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                                        { src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                        { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                        { src: '../reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+                                        { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+                                        { src: '../reveal.js/plugin/notes/notes.js', async: true }
+                                ]
+                        });
+
+                </script>
+
+        </body>
+</html>
