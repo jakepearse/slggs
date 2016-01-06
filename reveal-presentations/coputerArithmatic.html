@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+
+        <head>
+                <meta charset="utf-8">
+
+                <title>Computer Arithmetic</title>
+
+                <meta name="description" content="Data Structures">
+                <meta name="author" content="J Pearse">
+
+                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+                <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+                <link rel="stylesheet" href="../reveal.js/css/theme/slggs.css" id="theme">
+
+                <!-- Code syntax highlighting -->
+                <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+                <!-- Printing and PDF exports -->
+                <script>
+                        var link = document.createElement( 'link' );
+                        link.rel = 'stylesheet';
+                        link.type = 'text/css';
+                        link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+                        document.getElementsByTagName( 'head' )[0].appendChild( link );
+                </script>
+
+                <!--[if lt IE 9]>
+                <script src="lib/js/html5shiv.js"></script>
+                <![endif]-->
+        </head>
+
+        <body>
+
+                <div class="reveal">
+
+                        <!-- Any section element inside of this container is displayed as a slide -->
+                        <div class="slides">
+
+                                <section data-markdown>
+                                        <script type="text/template">
+                                                ### Computer Arithmetic
+                                                ##### Chapter 12
+                                                Key Terms
+                                                - Complement
+                                                - Mantessa
+                                                - Exponent
+
+                                        </script>
+                                </section>
+
+                                <section data-markdown>
+                                  <script type="text/template">
+                                                ### Complement
+                                                > In set theory, a complement of a set A refers to things not in (that is, things outside of) A
+                                                
+                                                When we are talking about **binary** numbers the complement of a given number is the *bitwise inversion*
+                                                
+                                                Sounds complex but it really means flip each bit to it's opposite value.
+                                                
+                                                 The 1's complement of 010 is 101
+                                  
+                                  </script>
+                                </section>
+
+                                          <section data-markdown>
+                                          <script type="text/template">
+                                                        ### Negative numbers in binary
+                                                        ##### page 139
+                                                        Sign and magnitude
+                                                        
+                                                        Simply use the fist digit (most significatnt bit) as a sign.
+                                                        0 is used to signify a positive number; 1 negative
+                                                        
+                                                        |sign|64|32|16|8|4|2|1|denary
+                                                        |:--:|:--:|:-:|:--:|:--:|:--:|:--:|:--:|:--:
+                                                        |0|1|1|0|0|0|1|1|99|
+                                                        |1|1|1|0|0|0|1|1|-99|
+                                                        
+                                                </script>
+                                        </section>
+
+                                          <section data-markdown>
+                                          <script type="text/template">
+                                                        ## 2's complement
+                                                        
+                                                        Instead of using a *sign* in the MSB use a negative value equal to -2<sup>n-1</sup>
+                                                        
+                                                        Where n is the number of columns
+                                                        
+                                                        |-128|64|32|16|8|4|2|1|denary
+                                                        |:--:|:--:|:-:|:--:|:--:|:--:|:--:|:--:|:--:
+                                                        |0|1|1|0|0|0|1|1|99|
+                                                        |1|1|1|0|0|0|1|1|-29|
+                                                </script>
+                                        </section>
+
+                                              <section data-markdown>
+                                              <script type="text/template">
+                                                ### Hex, base 16
+                                                Hex is a 'human readable' positional numbering system used to make binary easier to digest
+                                                Because we run out of numerals after 9 we use letters
+                                                
+                                                |10| 11 | 12 | 13 | 14 | 15 |
+                                                | --- |--- |--- |--- |---|
+                                                | A | B | C | D | E | F |
+                                                
+                                                This is especially popular because it neatly represents 1 nibble per numerial.
+
+                                                </script>
+                                                </section>
+
+                                              <section data-markdown>
+                                              <script type="text/template">
+                                                ### Real numbers
+                                                Binary uses floating point representations of real numbers
+                                                
+                                                Similar to scientific or standard form where 1,000,000 is 1x10<sup>6</sup>
+                                                
+                                                0.00167 becomes 1.67x10<sup>-3</sup>
+                                                
+                                                the exponent shows how many places the decimal point has been floated left or right
+                                                
+                                                A standard *float* is a 16bit number with a 10bit mantessa and a 6bit exponent
+                                                
+
+                                                </script>
+                                                </section>
+                                                
+                                                                                             <section data-markdown>
+                                              <script type="text/template">
+                                                ### 16 bit Float
+                                                
+                                                10 bit mantessa
+                                              
+                                                |-1|&middot;|<sup>1</sup>&frasl;<sub>2</sub>|<sup>1</sup>&frasl;<sub>4</sub>|<sup>1</sup>&frasl;<sub>16</sub>|<sup>1</sup>&frasl;<sub>32</sub>|<sup>1</sup>&frasl;<sub>64</sub>|<sup>1</sup>&frasl;<sub>128</sub>|<sup>1</sup>&frasl;<sub>256</sub>|<sup>1</sup>&frasl;<sub>512</sub>|
+                                                |:--:|:--:|:-:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+
+                                                6 bit exponent
+                                                
+                                                |-32|16|8|4|2|1|
+                                                |:--:|:--:|:-:|:--:|:--:|:--:|
+                                                
+
+                                                </script>
+                                                </section>
+
+                        </div>
+
+                </div>
+
+                <script src="../reveal.js/lib/js/head.min.js"></script>
+                <script src="../reveal.js/js/reveal.js"></script>
+
+                <script>
+
+                        // Full list of configuration options available at:
+                        // https://github.com/hakim../reveal.js.js#configuration
+                        Reveal.initialize({
+                                controls: true,
+                                progress: true,
+                                history: true,
+                                center: true,
+
+                                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                                // Optional reveal.js plugins
+                                dependencies: [
+                                        { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                                        { src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                        { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                        { src: '../reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+                                        { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+                                        { src: '../reveal.js/plugin/notes/notes.js', async: true }
+                                ]
+                        });
+
+                </script>
+
+        </body>
+</html>
