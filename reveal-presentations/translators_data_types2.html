@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+
+        <head>
+                <meta charset="utf-8">
+
+                <title>Databases</title>
+
+                <meta name="description" content="Databases2">
+                <meta name="author" content="J Pearse">
+
+                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+               
+                <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+                <link rel="stylesheet" href="../reveal.js/css/theme/slggs.css" id="theme">
+
+                <!-- Code syntax highlighting -->
+                <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+                <!-- Printing and PDF exports -->
+                <script>
+                        var link = document.createElement( 'link' );
+                        link.rel = 'stylesheet';
+                        link.type = 'text/css';
+                        link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+                        document.getElementsByTagName( 'head' )[0].appendChild( link );
+                </script>
+
+                <!--[if lt IE 9]>
+                <script src="lib/js/html5shiv.js"></script>
+                <![endif]-->
+        </head>
+
+        <body>
+
+                <div class="reveal">
+
+                        <!-- Any section element inside of this container is displayed as a slide -->
+                        <div class="slides">
+                                      <section data-markdown>
+                                      ## Two parter
+                                      ### LO: Translators & Data types part 2
+                                      
+                                      - part 1: Translators, compilers and interpreters
+                                      - part 2: Sound, images and compression.
+                                      
+                                      Homework: practice questions p145
+
+                                      </section>
+                                  
+                                    <section data-markdown>
+                                    ### Translators
+                                    All programs are converted into byte-code before they can be executed on a CPU
+                                    There are two types of translator.
+                                    
+                                    - Compiled programs are converted before they are run.
+                                    
+                                    - Interpreted programs are converted line-by-line as they are run.
+                                    
+                                    
+                                    </section>
+                                    
+                                  <section data-markdown>
+                                    ### Compiled programs
+                                    - Run much faster
+                                    - Are not cross platform
+                                    - Source code is not distributed (necessarily)
+                                    
+                                    often a program will be built into *object code* an intermediate step between source code and executable code.
+                                    
+                                    Then a final pass through a *linker* on the target system produces the final executable.
+                                    
+                                      
+                                    </section>
+                                  
+                                  <section data-markdown>
+                                    ### Interpreted programs
+                                    - Cross platform
+                                    - Easier to debug & test (potentially)
+                                    - User must have an interpreter
+                                    - Source code must be distributed.
+                                    - Slower to execute
+                                    - No intermediate steps
+                                      
+                                    </section>
+                                  <section data-markdown>
+                                    ### Part 2: Data types
+                                    Natural sounds are conveyed by sound waves.
+                                    Our eyes are able to see, due to the scattering of photons (waves/particles).
+                                    
+                                    Converting these natural phenomenon into binary data is the process of *quantization*
+                                    
+                                    Taking continuous data and quantizing it into discrete bits.
+                                    </section>
+
+                                  <section data-markdown>
+                                    ### Sound
+                                    A continuous sound wave is measured at a certain rate.
+                                    
+                                    Lets say 16,000 times per second we measure the amplitude of the wave.
+                                    - We call this a 16Khz sample rate.
+                                    
+                                    How much detail we record in each is the bit rate.
+                                    - Lets say we record 8-bits of data for each sample we make. 8-bits is the sample width.
+                                    
+                                    Simple, a given sound file will be of size: 
+                                    
+                                    size = sample_width &middot; sample_rate &middot; duration_in_seconds.
+                                    </section>
+
+                                  <section data-markdown>
+                                    ### Bitmap images
+                                    Images follow a similar idea now we are representing a two dimensional array of pixels.
+                                    
+                                    For each pixel we need a sample size (how many different colours or shades can the pixel be in) in bits.
+                                    
+                                    We call this colour depth, 8-bit colour has 256 different colours including black and white.
+                                    
+                                    To obtain the image size in bits simply multiply the colour depth by the number of pixels.
+                                    </section>
+                                    
+                                    <section data-markdown>
+                                    ### Meta-data
+                                    So far we have seen how the raw sample data is encoded but in real life there is a lot more useful information that can be connected to this data.
+                                    - Title
+                                    - Artist
+                                    - Date created
+                                    
+                                    Not to mention which colour should correspond to which binary value; palette data.
+                                    
+                                    This called meta-data, data about the data.
+                                    </section>
+
+                        </div>
+
+                </div>
+
+                <script src="../reveal.js/lib/js/head.min.js"></script>
+                <script src="../reveal.js/js/reveal.js"></script>
+
+                <script>
+
+                        // Full list of configuration options available at:
+                        // https://github.com/hakim../reveal.js.js#configuration
+                        Reveal.initialize({
+                                controls: true,
+                                progress: true,
+                                history: true,
+                                center: true,
+
+                                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                                // Optional reveal.js plugins
+                                dependencies: [
+                                        { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                                        { src: '../reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                        { src: '../reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                                        { src: '../reveal.js/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+                                        { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+                                        { src: '../reveal.js/plugin/notes/notes.js', async: true }
+                                ]
+                        });
+
+                </script>
+
+        </body>
+</html>
